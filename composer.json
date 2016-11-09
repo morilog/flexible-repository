@@ -23,5 +23,6 @@
             "Morilog\\FlexibleRepository\\": "src/",
             "Morilog\\FlexibleRepository\\Tests\\": "tests/"
         }
-    }
+    },
+    "minimum-stability": "stable"
 }
