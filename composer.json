@@ -1,6 +1,8 @@
 {
     "name": "morilog/flexible-repository",
     "description": "Flexible and powerful repositories for laravel framework",
+    "keywords": ["laravel", "repository", "repository-pattern", "ddd", "eloquent", "morilog", "laratalks"],
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
