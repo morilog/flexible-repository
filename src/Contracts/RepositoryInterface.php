@@ -17,6 +17,11 @@ interface RepositoryInterface
     public function find($id);
 
     /**
+     * @return mixed
+     */
+    public function first();
+
+    /**
      * @param $field
      * @param $value
      * @return mixed

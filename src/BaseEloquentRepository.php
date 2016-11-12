@@ -51,21 +51,40 @@ abstract class BaseEloquentRepository extends BaseRepository implements Reposito
             $query->select($this->onlyFields);
         }
 
-        $this->applyLimitOffset($query);
+        $this->applyLimit($query);
+        $this->applyOffset($query);
 
         $this->reset();
 
         return $query;
     }
 
-    protected function applyLimitOffset($query)
+    protected function applyLimit($query)
     {
-        return $query->skip($this->skip)->take($this->take);
+        if (is_numeric($this->take) && $this->take > 0) {
+            return $query->take($this->take);
+        }
+
+        return $query;
+    }
+
+    protected function applyOffset($query)
+    {
+        if (is_numeric($this->skip) && $this->skip >= 0) {
+            return $query->skip($this->skip);
+        }
+
+        return $query;
     }
 
     public function find($id)
     {
         return $this->buildQuery()->find($id);
+    }
+
+    public function first()
+    {
+        return $this->buildQuery()->first();
     }
 
     public function findBy($field, $value)

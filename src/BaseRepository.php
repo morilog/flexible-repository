@@ -12,16 +12,34 @@ abstract class BaseRepository implements RepositoryInterface
      */
     protected $container;
 
+    /**
+     * @var array
+     */
     protected $relations;
 
+    /**
+     * @var array
+     */
     protected $orderBys;
 
+    /**
+     * @var array
+     */
     protected $onlyFields;
 
+    /**
+     * @var null|integer
+     */
     protected $take;
 
+    /**
+     * @var null|integer
+     */
     protected $skip;
 
+    /**
+     * @var CriteriaCollection
+     */
     protected $criteriaCollection;
 
     public function __construct(Container $container)
@@ -88,8 +106,8 @@ abstract class BaseRepository implements RepositoryInterface
         $this->orderBys = [];
         $this->relations = [];
         $this->onlyFields = [];
-        $this->skip = 0;
-        $this->take = 10;
+        $this->skip = null;
+        $this->take = null;
         $this->criteriaCollection = new CriteriaCollection([]);
     }
 }

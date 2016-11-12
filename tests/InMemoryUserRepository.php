@@ -99,4 +99,12 @@ class InMemoryUserRepository extends BaseRepository implements UserRepository
 
         return new \Illuminate\Pagination\LengthAwarePaginator($items,$items->count(), $perPage);
     }
+
+    /**
+     * @return mixed
+     */
+    public function first()
+    {
+        return $this->buildQuery()->first();
+    }
 }

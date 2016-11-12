@@ -64,4 +64,13 @@ class TestRepository extends \PHPUnit_Framework_TestCase
         $this->assertEquals($users->perPage() , 5);
         $this->assertEquals($users->items()[0], $this->repository->find(1));
     }
+
+    public function testFirst()
+    {
+        $first = $this->repository->first();
+        $this->assertEquals($first['id'], 1);
+
+        $first = $this->repository->skip(5)->first();
+        $this->assertEquals($first['id'], 6);
+    }
 }
