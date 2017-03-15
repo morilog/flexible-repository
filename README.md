@@ -80,7 +80,7 @@ class UsersController extends Controller
 {
     public function index(UserRepository $repository)
     {
-        retrun $repository->all();
+        return $repository->all();
     }
 }
 
