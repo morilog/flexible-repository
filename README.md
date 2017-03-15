@@ -38,7 +38,7 @@ class EloquentUserRepository extends BaseEloquentRepository implements UserRepos
 {
     protected function model()
     {
-        retrun User::class;
+        return User::class;
     }
 }
 ```
